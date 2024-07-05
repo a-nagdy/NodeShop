@@ -14,7 +14,9 @@ const User = require('./models/user');
 
 const app = express();
 
-const MONGODB_URI = "mongodb+srv://nodeUser:RJsfOJLMqVwEhi3w@cluster0.sivh1zo.mongodb.net/NodeJs?retryWrites=true&w=majority&appName=Cluster0"
+require('dotenv').config();
+
+const MONGODB_URI = process.env.DATABASE_URL;
 
 const store = new MongoDBStore({
     uri: MONGODB_URI,
